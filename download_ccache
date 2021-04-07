@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Downloading previous ccache . . . . . ."
+
+cd /tmp
+curl https://www.hisyam99.workers.dev/ccache-fluid-1-4-fix-2.tar.gz -o ccache-fluid-1-4-fix-2.tar.gz
+time tar xf ccache-fluid-1-4-fix-2.tar.gz
+rm -rf ccache-fluid-1-4-fix-2.tar.gz

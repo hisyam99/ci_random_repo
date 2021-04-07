@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Machine specifications and environments"
+df -h
+free -h
+nproc
+cat /etc/os*
+env

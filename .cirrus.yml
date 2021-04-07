@@ -1,0 +1,26 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_WORKING_DIR: "/tmp/ci"
+
+task:
+    name: ztyydufdhsp
+    timeout_in: 120m
+    container:
+      image: ubuntu:rolling
+      cpu: 8
+      memory: 32G
+    system_update_script:
+      - ./system_update
+    neofetch_script:
+      - ./neofetch
+    specification_script:
+      - ./specification
+    download_ccache_script:
+      - ./download_ccache
+    sync_script:
+      - ./sync
+    build_script:
+      - ./build
+ #   upload_ccache_script:
+ #     - ./upload_ccache
+      
