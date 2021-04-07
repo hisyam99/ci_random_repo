@@ -9,8 +9,8 @@ cd "$ROMDIR"
 
 # Repo init command
 repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-device,-mips,-darwin,-notdefault
-git config --global user.name awikawok1
-git config --global user.email awikawok@protonmail.com
+git config --global user.name hisyam99
+git config --global user.email hisyamkamil99@gmail.com
 
 git clone https://github.com/awikawok1/local_manifests --depth 1 -b certus/11 .repo/local_manifests
 
