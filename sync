@@ -32,3 +32,9 @@ cd system/netd
 wget https://github.com/phhusson/platform_system_netd/commit/0296b55efeaae8cc835a6e2645531b29e10fb934.patch
 git am 0296b55efeaae8cc835a6e2645531b29e10fb934.patch
 cd "$ROMDIR"
+
+# Download Kernel Prebuilt
+mkdir -p device/xiaomi/certus/kernel
+cd device/xiaomi/certus/kernel
+curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
+cd "$ROMDIR"
