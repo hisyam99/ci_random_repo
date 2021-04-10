@@ -8,7 +8,6 @@ echo "Updating System . . ."
 apt update
 apt upgrade -y
 apt install -y wget curl git aria2 man-db pigz
-apt install -y unpigz
 
 echo "Installing Timezone . . ."
 apt install -y tzdata
