@@ -3,6 +3,6 @@
 echo "Downloading previous ccache . . . . . ."
 
 cd /tmp
-curl https://bashupload.com/N4fj-/ccache.tar.gz -o ccache.tar.gz
+curl https://www.hisyam99.workers.dev/ccache.tar.gz -o ccache.tar.gz
 time tar xf ccache.tar.gz
 rm -rf ccache.tar.gz
