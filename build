@@ -2,8 +2,8 @@
 
 cd /tmp/rom
 
-source build/envsetup.sh
-lunch ssos_certus-userdebug
+. build/envsetup.sh
+lunch rr_certus-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
@@ -30,5 +30,5 @@ make_rom(){
 }
 
 make_metalava
-make_rom
-#sleep 4400 && kill "$!"
+make_rom &
+sleep 4800 && kill "$!"
