@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ROMDIR=/tmp/rom
-MANIFEST=https://github.com/ShapeShiftOS/android_manifest.git
-BRANCH=android_11
+MANIFEST=https://github.com/ResurrectionRemix/platform_manifest.git
+BRANCH=Q
 
 mkdir -p "$ROMDIR"
 cd "$ROMDIR"
@@ -12,29 +12,35 @@ repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-dev
 git config --global user.name hisyam99
 git config --global user.email hisyamkamil99@gmail.com
 
-git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/11 .repo/local_manifests
+git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-29 .repo/local_manifests
 
 # Sync source with -q
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Replace LatinIME to modified LatinIME for better interface :p
-rm -rf packages/inputmethods/LatinIME
-git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
+#rm -rf packages/inputmethods/LatinIME
+#git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
+
+# bringup resurrection remix
+cd $ROMDIR/device/xiaomi/certus
+mv lineage_certus.mk rr_certus.mk
+mv lineage.dependencies rr.dependencies
+sed -i "s/lineage/rr/" AndroidProducts.mk rr_certus.mk
 
 # Codec Patch
-cd frameworks/av
-wget https://github.com/SamarV-121/android_vendor_extra/raw/lineage-18.1/patches/frameworks/av/0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
-git am 0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
-cd "$ROMDIR"
+#cd frameworks/av
+#wget https://github.com/SamarV-121/android_vendor_extra/raw/lineage-18.1/patches/frameworks/av/0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
+#git am 0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
+#cd "$ROMDIR"
 
 # Fix Hotspot in R
-cd system/netd
-wget https://github.com/phhusson/platform_system_netd/commit/0296b55efeaae8cc835a6e2645531b29e10fb934.patch
-git am 0296b55efeaae8cc835a6e2645531b29e10fb934.patch
-cd "$ROMDIR"
+#cd system/netd
+#wget https://github.com/phhusson/platform_system_netd/commit/0296b55efeaae8cc835a6e2645531b29e10fb934.patch
+#git am 0296b55efeaae8cc835a6e2645531b29e10fb934.patch
+#cd "$ROMDIR"
 
 # Download Kernel Prebuilt
-mkdir -p device/xiaomi/certus/kernel
-cd device/xiaomi/certus/kernel
-curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
-cd "$ROMDIR"
+#mkdir -p device/xiaomi/certus/kernel
+#cd device/xiaomi/certus/kernel
+#curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
+#cd "$ROMDIR"
