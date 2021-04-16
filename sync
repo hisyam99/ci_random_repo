@@ -41,11 +41,11 @@ sed -i "s/lineage/rr/" AndroidProducts.mk rr_certus.mk
 
 # Download Kernel Prebuilt
 cd device/xiaomi/certus/prebuilt
-curl https://www.hisyam99.workers.dev/zImage -o zImage
+curl https://www.hisyam99.workers.dev/zImage -o zImage-dtb
 cd "$ROMDIR"
 
 # Replace BoardConfig
 cd device/xiaomi/certus
 rm -rf BoardConfig.mk
-curl https://www.hisyam99.workers.dev/BoardConfig.mk -o BoardConfig.mk
+curl https://github.com/hisyam99/BoardConfig_Certus/raw/main/BoardConfig.mk -o BoardConfig.mk
 cd "$ROMDIR"
