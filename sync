@@ -40,7 +40,13 @@ sed -i "s/lineage/rr/" AndroidProducts.mk rr_certus.mk
 #cd "$ROMDIR"
 
 # Download Kernel Prebuilt
-#mkdir -p device/xiaomi/certus/kernel
-#cd device/xiaomi/certus/kernel
-#curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
-#cd "$ROMDIR"
+mkdir -p device/xiaomi/certus/kernel
+cd device/xiaomi/certus/kernel
+curl https://github.com/recovery-xiaomi-mt6765/device_xiaomi_certus/raw/twrp-9/prebuilt/zImage -o zImage
+cd "$ROMDIR"
+
+# Replace BoardConfig
+cd device/xiaomi/certus
+rm -rf BoardConfig.mk
+wget https://github.com/hisyam99/BoardConfig_Certus/raw/main/BoardConfig.mk
+cd "$ROMDIR"
