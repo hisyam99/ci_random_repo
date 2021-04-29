@@ -22,11 +22,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
 
 # bringup resurrection remix
-cd $ROMDIR/device/xiaomi/certus
+cd device/xiaomi/certus
 mv nad_certus.mk rr_certus.mk
 mv nad.dependencies rr.dependencies
 sed -i "s/nad/rr/" AndroidProducts.mk rr_certus.mk
 sed -i "s/nusantara/rr/" rr_certus.mk
+cd "$ROMDIR"
 
 # Codec Patch
 #cd frameworks/av
