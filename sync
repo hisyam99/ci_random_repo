@@ -22,9 +22,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #rm -rf packages/inputmethods/LatinIME
 #git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
 
-# Fix sepolicy issue
-#rm -rf device/mediatek/sepolicy/basic/r_non_plat
-
 # bringup resurrection remix
 cd device/xiaomi/certus
 mv nad_certus.mk rr_certus.mk
