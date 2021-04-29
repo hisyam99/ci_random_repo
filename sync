@@ -48,5 +48,5 @@ cd "$ROMDIR"
 # Replace BoardConfig
 cd device/xiaomi/certus
 rm -rf BoardConfig.mk
-curl https://github.com/hisyam99/BoardConfig_Certus/raw/main/BoardConfig.mk -o BoardConfig.mk
+curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk -o BoardConfig.mk
 cd "$ROMDIR"
