@@ -23,7 +23,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
 
 # Fix sepolicy issue
-rm -rf device/mediatek/sepolicy/basic/r_non_plat
+#rm -rf device/mediatek/sepolicy/basic/r_non_plat
 
 # bringup resurrection remix
 cd device/xiaomi/certus
@@ -40,9 +40,9 @@ cd "$ROMDIR"
 #cd "$ROMDIR"
 
 # Download Kernel Prebuilt
-cd device/xiaomi/certus/prebuilt
-curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
-cd "$ROMDIR"
+#cd device/xiaomi/certus/prebuilt
+#curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
+#cd "$ROMDIR"
 
 # Replace BoardConfig
 cd device/xiaomi/certus
