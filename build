@@ -17,13 +17,13 @@ up(){
 }
 
 make_metalava(){
-	mka api-stubs-docs
-	mka system-api-stubs-docs
-	mka test-api-stubs-docs
+	make api-stubs-docs -j8
+	make system-api-stubs-docs -j8
+	make test-api-stubs-docs -j8
 }
 
 make_rom(){
-	mka bacon
+	make bacon -j8
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
