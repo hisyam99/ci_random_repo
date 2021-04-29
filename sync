@@ -23,9 +23,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # bringup resurrection remix
 cd $ROMDIR/device/xiaomi/certus
-mv lineage_certus.mk rr_certus.mk
-mv lineage.dependencies rr.dependencies
-sed -i "s/lineage/rr/" AndroidProducts.mk rr_certus.mk
+mv nad_certus.mk rr_certus.mk
+mv nad.dependencies rr.dependencies
+sed -i "s/nad/rr/" AndroidProducts.mk rr_certus.mk
+sed -i "s/nusantara/rr/" rr_certus.mk
 
 # Codec Patch
 #cd frameworks/av
@@ -41,7 +42,7 @@ sed -i "s/lineage/rr/" AndroidProducts.mk rr_certus.mk
 
 # Download Kernel Prebuilt
 cd device/xiaomi/certus/prebuilt
-curl https://www.hisyam99.workers.dev/zImage -o zImage-dtb
+curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
 cd "$ROMDIR"
 
 # Replace BoardConfig
