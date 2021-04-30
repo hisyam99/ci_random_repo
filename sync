@@ -12,7 +12,6 @@ repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-dev
 git config --global user.name hisyam99
 git config --global user.email hisyamkamil99@gmail.com
 
-# Local Manifests
 git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-29 .repo/local_manifests
 
 # Sync source with -q
@@ -42,7 +41,7 @@ cd "$ROMDIR"
 #cd "$ROMDIR"
 
 # Replace BoardConfig
-cd device/xiaomi/certus
-rm -rf BoardConfig.mk
-curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk -o BoardConfig.mk
-cd "$ROMDIR"
+#cd device/xiaomi/certus
+#rm -rf BoardConfig.mk
+#curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk -o BoardConfig.mk
+#cd "$ROMDIR"
