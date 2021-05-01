@@ -2,7 +2,10 @@
 
 echo "Downloading previous ccache . . . . . ."
 
+# ccache URL file
+url=https://www.hisyam99.workers.dev/ccache.tar.gz
+
 cd /tmp
-curl https://www.hisyam99.workers.dev/ccache.tar.gz -o ccache.tar.gz
+time aria2c $url -x16 -s50
 time tar xf ccache.tar.gz
 rm -rf ccache.tar.gz
