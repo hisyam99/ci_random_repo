@@ -12,38 +12,27 @@ repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-dev
 git config --global user.name hisyam99
 git config --global user.email hisyamkamil99@gmail.com
 
+# Local Manifests
 git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-29 .repo/local_manifests
 
 # Sync source with -q
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Replace LatinIME to modified LatinIME for better interface :p
-#rm -rf packages/inputmethods/LatinIME
-#git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b eleven packages/inputmethods/LatinIME
-
-rm -rf device/xiaomi/certus/sepolicy/vendor/mtk_hal_audio.te
+rm -rf device/xiaomi/certus/sepolicy/vendor
 
 # bringup resurrection remix
-cd device/xiaomi/certus
+cd "$ROMDIR"/device/xiaomi/certus
 mv nad_certus.mk rr_certus.mk
 mv nad.dependencies rr.dependencies
 sed -i "s/nad/rr/" AndroidProducts.mk rr_certus.mk
 sed -i "s/nusantara/rr/" rr_certus.mk
-cd "$ROMDIR"
-
-# Fix Hotspot in R
-#cd system/netd
-#wget https://github.com/phhusson/platform_system_netd/commit/0296b55efeaae8cc835a6e2645531b29e10fb934.patch
-#git am 0296b55efeaae8cc835a6e2645531b29e10fb934.patch
-#cd "$ROMDIR"
-
-# Download Kernel Prebuilt
-#cd device/xiaomi/certus/prebuilt
-#curl https://www.hisyam99.workers.dev/zImage-dtb -o zImage-dtb
-#cd "$ROMDIR"
 
 # Replace BoardConfig
-cd device/xiaomi/certus
 rm -rf BoardConfig.mk
 curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk -o BoardConfig.mk
+
+# SafetyNet
+cd "$ROMDIR"/system/security
+wget -c https://github.com/ProtonAOSP/android_system_security/commit/9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
+git am 9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
 cd "$ROMDIR"
