@@ -17,6 +17,7 @@ up(){
 }
 
 make_metalava(){
+	make sepolicy -j8
 	make api-stubs-docs -j8
 	make system-api-stubs-docs -j8
 	make test-api-stubs-docs -j8
