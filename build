@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd /tmp/rom
-sed -i'/# CONFIG_LOCALVERSION_AUTO is not set/a CONFIG_LOCALVERSION="-Hisyam99"' kernel/xiaomi/mt6765/arch/arm/configs/certus_defconfig
 
 . build/envsetup.sh
 lunch rr_certus-userdebug
