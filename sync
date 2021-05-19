@@ -18,11 +18,6 @@ git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-2
 # Sync source with -q
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Fix sepolicy related issue
-rm -rf device/mediatek/sepolicy/basic/non_plat/file.te
-cd "$ROMDIR"/device/mediatek/sepolicy/basic/non_plat
-curl https://del.dog/raw/ryxanukipp -o file.te
-
 # Replace defconfig
 rm -rf kernel/xiaomi/mt6765/arch/arm/configs/certus_defconfig
 cd "$ROMDIR"/kernel/xiaomi/mt6765/arch/arm/configs
