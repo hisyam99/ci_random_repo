@@ -21,7 +21,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Fix sepolicy related issue
 rm -rf device/mediatek/sepolicy/basic/non_plat/file.te
 cd "$ROMDIR"/device/mediatek/sepolicy/basic/non_plat
-curl https://del.dog/raw/ylicusunai -o file.te
+curl https://del.dog/raw/wingyraimu -o file.te
 
 # Replace defconfig
 rm -rf kernel/xiaomi/mt6765/arch/arm/configs/certus_defconfig
