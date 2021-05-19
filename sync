@@ -19,8 +19,8 @@ git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-2
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Fix sepolicy related issue
-rm -rf device/mediatek/sepolicy/basic/non_plate/file.te
-cd "$ROMDIR"/device/mediatek/sepolicy/basic/non_plate
+rm -rf device/mediatek/sepolicy/basic/non_plat/file.te
+cd "$ROMDIR"/device/mediatek/sepolicy/basic/non_plat
 curl https://del.dog/raw/ylicusunai -o file.te
 
 # Replace defconfig
