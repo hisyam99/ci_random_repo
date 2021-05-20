@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ccache -s
-
 cd /tmp
 
 date=`date +%Y%m%d`
@@ -14,8 +12,6 @@ com ()
 
 time com ccache 1 # Compression level 1, its enough
 
-up(){
-	curl --upload-file $1 https://bashupload.com/
-}
-
-up ccache.tar.gz
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy ccache.tar.gz Hisyam99:ccache -P
