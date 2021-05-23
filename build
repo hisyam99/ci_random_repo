@@ -31,7 +31,5 @@ make_rom(){
 }
 
 make_metalava
-make_rom
-#sleep 5200 && kill "$!"
-
-ccache -s
+make_rom &
+sleep 5200 && kill "$!"
