@@ -23,7 +23,8 @@ cd "$ROMDIR"/device/xiaomi/certus
 rm -rf nad_certus.mk
 curl https://del.dog/raw/ifuppufuxu -o lineage_certus.mk
 mv nad.dependencies lineage.dependencies
-sed -i "s/nad/lineage/" AndroidProducts.mk lineage_certus.mk
+sed -i "s/nad/lineage/" AndroidProducts.mk 
+sed -i "s/rr/lineage/" lineage_certus.mk
 
 # Replace device.mk
 rm -rf device.mk
