@@ -18,6 +18,11 @@ git clone https://github.com/hisyam99/local_manifests --depth 1 -b certus/vndk-2
 # Sync source with -q
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# Replace defconfig
+rm -rf kernel/xiaomi/mt6765/arch/arm/configs/certus_defconfig
+cd "$ROMDIR"/kernel/xiaomi/mt6765/arch/arm/configs
+curl https://del.dog/raw/divuvullan -o certus_defconfig
+
 # bringup resurrection remix
 cd "$ROMDIR"/device/xiaomi/certus
 rm -rf nad_certus.mk
