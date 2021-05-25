@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ROMDIR=/tmp/rom
-MANIFEST=git://github.com/LineageOS/android.git
-BRANCH=lineage-17.1
+MANIFEST=https://github.com/ResurrectionRemix/platform_manifest.git
+BRANCH=Q
 
 mkdir -p "$ROMDIR"
 cd "$ROMDIR"
@@ -21,10 +21,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # bringup resurrection remix
 cd "$ROMDIR"/device/xiaomi/certus
 rm -rf nad_certus.mk
-curl https://del.dog/raw/ifuppufuxu -o lineage_certus.mk
-mv nad.dependencies lineage.dependencies
-sed -i "s/nad/lineage/" AndroidProducts.mk 
-sed -i "s/rr/lineage/" lineage_certus.mk
+curl https://del.dog/raw/ifuppufuxu -o rr_certus.mk
+mv nad.dependencies rr.dependencies
+sed -i "s/nad/rr/" AndroidProducts.mk
 
 # Replace device.mk
 rm -rf device.mk
@@ -38,6 +37,13 @@ curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardCon
 cd "$ROMDIR"/system/security
 wget -c https://github.com/ProtonAOSP/android_system_security/commit/9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
 git am 9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
+
+# ....
+cd "$ROMDIR"/packages/apps/Settings
+rm -rf res/values/resurrection_device_maintainers_strings.xml
+rm -rf res/xml/device_maintainers_fragment.xml
+curl https://del.dog/raw/uckitucraf -o resurrection_device_maintainers_strings.xml
+curl https://del.dog/raw/ykicibylog -o device_maintainers_fragment.xml
 
 # Back to ROM Directory
 cd "$ROMDIR"
