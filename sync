@@ -47,7 +47,7 @@ git am 9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
 cd "$ROMDIR"/packages/apps/Settings
 rm -rf res/values/resurrection_device_maintainers_strings.xml
 rm -rf res/xml/device_maintainers_fragment.xml
-curl https://del.dog/raw/uckitucraf -o resurrection_device_maintainers_strings.xml
+curl https://del.dog/raw/anacyroguh -o resurrection_device_maintainers_strings.xml
 curl https://del.dog/raw/ykicibylog -o device_maintainers_fragment.xml
 
 # Back to ROM Directory
