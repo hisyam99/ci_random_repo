@@ -3,7 +3,7 @@
 echo "Downloading previous ccache . . . . . ."
 
 # ccache URL file
-url=https://drive.azhe.space/0:/Data/ccache.tar.gz
+url=https://www.hisyam99.workers.dev/ccache/ccache.tar.gz
 
 cd /tmp
 time aria2c $url -x16 -s50
