@@ -21,22 +21,22 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Replace defconfig
 rm -rf kernel/xiaomi/mt6765/arch/arm/configs/certus_defconfig
 cd "$ROMDIR"/kernel/xiaomi/mt6765/arch/arm/configs
-curl https://del.dog/raw/divuvullan -o certus_defconfig
+wget https://del.dog/raw/divuvullan -O certus_defconfig
 
 # bringup resurrection remix
 cd "$ROMDIR"/device/xiaomi/certus
 rm -rf nad_certus.mk
-curl https://del.dog/raw/ifuppufuxu -o rr_certus.mk
+wget https://del.dog/raw/ifuppufuxu -O rr_certus.mk
 mv nad.dependencies rr.dependencies
 sed -i "s/nad/rr/" AndroidProducts.mk
 
 # Replace device.mk
 rm -rf device.mk
-curl https://del.dog/raw/lagryloloc -o device.mk
+wget https://del.dog/raw/lagryloloc -O device.mk
 
 # Replace BoardConfig
 rm -rf BoardConfig.mk
-curl https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk -o BoardConfig.mk
+wget https://raw.githubusercontent.com/hisyam99/BoardConfig_Certus/main/BoardConfig.mk
 
 # SafetyNet
 cd "$ROMDIR"/system/security
@@ -47,8 +47,8 @@ git am 9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
 cd "$ROMDIR"/packages/apps/Settings
 rm -rf res/values/resurrection_device_maintainers_strings.xml
 rm -rf res/xml/device_maintainers_fragment.xml
-curl https://del.dog/raw/anacyroguh -o resurrection_device_maintainers_strings.xml
-curl https://del.dog/raw/ykicibylog -o device_maintainers_fragment.xml
+wget https://www.hisyam99.workers.dev/resurrection_device_maintainers_strings.xml -O res/values/resurrection_device_maintainers_strings.xml
+wget https://www.hisyam99.workers.dev/device_maintainers_fragment.xml -O res/xml/device_maintainers_fragment.xml
 
 # Back to ROM Directory
 cd "$ROMDIR"
