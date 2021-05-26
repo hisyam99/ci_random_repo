@@ -45,10 +45,8 @@ git am 9dd88a70668da3d7b0581489d55d0d1a2ced2f5c.patch
 
 # ....
 cd "$ROMDIR"/packages/apps/Settings
-rm -rf res/values/resurrection_device_maintainers_strings.xml
-rm -rf res/xml/device_maintainers_fragment.xml
-wget https://www.hisyam99.workers.dev/resurrection_device_maintainers_strings.xml -O res/values/resurrection_device_maintainers_strings.xml
-wget https://www.hisyam99.workers.dev/device_maintainers_fragment.xml -O res/xml/device_maintainers_fragment.xml
+rm -rf res/values/rr_strings.xml
+wget https://www.hisyam99.workers.dev/rr_strings.xml -O res/values/rr_strings.xml
 
 # Back to ROM Directory
 cd "$ROMDIR"
