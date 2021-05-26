@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     CIRRUS_WORKING_DIR: "/tmp/ci"
-    rclone_config: "ENCRYPTED[cffac8ba529721f184e6fb7b3e67588585e0ef951e16b534ec5e431fff4576a7e0dd79d7f9a5afa0a6ee0e859660e4fe]"
+    rclone_config: "ENCRYPTED[4ddfaaca291ffd59a261b92a7a1246fd474dba6098b61806ccb18a1879dac0b0126683752a5a85966f94d84500902ca6]"
 
 task:
     name: hgdvbjptysp
