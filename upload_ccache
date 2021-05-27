@@ -14,4 +14,4 @@ time com ccache 1 # Compression level 1, its enough
 
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
-time rclone copy ccache.tar.gz Hisyam99:ccache -P
+time rclone copy ccache.tar.gz Hisyam99:ccac -P
